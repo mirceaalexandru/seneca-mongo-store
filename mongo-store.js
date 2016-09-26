@@ -11,9 +11,9 @@ var name = 'mongo-store'
 
 
 /*
-native$ = object => use object as query, no meta settings
-native$ = array => use first elem as query, second elem as meta settings
-*/
+ native$ = object => use object as query, no meta settings
+ native$ = array => use first elem as query, second elem as meta settings
+ */
 
 
 function idstr (obj) {
@@ -131,7 +131,7 @@ module.exports = function (opts) {
       mongos: {}
     }, conf.options)
 
-
+    delete options.options
     // Connect using the URI
     MongoClient.connect(conf.uri, options, function (err, db) {
       if (err) {
@@ -324,21 +324,25 @@ module.exports = function (opts) {
     },
 
     native: function (args, done) {
-      dbinst.collection('seneca', function (err, coll) {
-        if (!error(args, err, done)) {
-          coll.findOne({}, {}, function (err, entp) {
-            if (!error(args, err, done)) {
-              done(null, dbinst)
-            }
-            else {
-              done(err)
-            }
-          })
-        }
-        else {
-          done(err)
-        }
-      })
+      if (dbinst) {
+        dbinst.collection('seneca', function (err, coll) {
+          if (!error(args, err, done)) {
+            coll.findOne({}, {}, function (err, entp) {
+              if (!error(args, err, done)) {
+                done(null, dbinst)
+              }
+              else {
+                done(err)
+              }
+            })
+          }
+          else {
+            done(err)
+          }
+        })
+      } else {
+        done('Cannot connect')
+      }
     }
   }
 
