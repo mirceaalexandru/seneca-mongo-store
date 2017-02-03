@@ -139,6 +139,7 @@ module.exports = function (opts) {
     MongoClient.connect(conf.uri, options, function (err, db) {
       console.log(`Connect result error: ${err}`);
       if (err) {
+        throw err;
         return seneca.die('connect', err, conf)
       }
 
