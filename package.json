@@ -6,7 +6,7 @@
   "dependencies": {
     "lodash": "4.15.0",
     "mongodb": "2.2.19"
-  }
+  },
   "files": [
     "mongo-store.js"
   ]
