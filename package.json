@@ -1,6 +1,6 @@
 {
-  "name": "seneca-mongo-store",
-  "version": "1.1.0",
+  "name": "@brightfishlearning/seneca-mongo-store",
+  "version": "2.0.0",
   "description": "Seneca data store plugin for MongoDB",
   "main": "mongo-store.js",
   "scripts": {
@@ -12,33 +12,6 @@
     "stop": "docker-compose kill",
     "annotate": "docco mongo-store.js -o docs/annotated"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/senecajs/seneca-mongo-store"
-  },
-  "keywords": [
-    "seneca",
-    "plugin",
-    "store",
-    "mongo",
-    "mongodb",
-    "json"
-  ],
-  "author": "Richard Rodger (http://richardrodger.com)",
-  "contributors": [
-    "Richard Rodger (http://richardrodger.com)",
-    "Peter Elger (https://github.com/pelger)",
-    "Cristian Ianto (https://github.com/iantocristian)",
-    "Mircea Alexandru (https://github.com/mirceaalexandru)",
-    "Dean McDonnell (https://github.com/mcdonnelldean)",
-    "Maxence Dalmais (https://github.com/maxired)",
-    "Mihai Dima (https://github.com/mihaidma)",
-    "Wyatt Preul (https://github.com/geek)",
-    "Paolo Chiodi (https://github.com/paolochiodi)",
-    "Shane Lacey (https://github.com/shanel262)",
-    "Oisín Hennessy (https://github.com/code-jace)"
-  ],
-  "license": "MIT",
   "dependencies": {
     "lodash": "4.15.0",
     "mongodb": "2.2.5"
@@ -61,8 +34,5 @@
     "LICENSE.txt",
     "README.md",
     "mongo-store.js"
-  ],
-  "pre-commit": [
-    "test"
   ]
 }
