@@ -133,8 +133,13 @@ module.exports = function (opts) {
 
     delete options.options
     // Connect using the URI
+    console.log(`Connect using options
+      ${conf.uri}
+      ${JSON.stringify(options)}`);
     MongoClient.connect(conf.uri, options, function (err, db) {
+      console.log(`Connect result error: ${JSON.stringify(err)}`);
       if (err) {
+        throw err;
         return seneca.die('connect', err, conf)
       }
 
