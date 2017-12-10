@@ -1,5 +1,5 @@
 {
-  "name": "@brightfishlearning/seneca-mongo-store",
+  "name": "mongo-store",
   "version": "2.0.0",
   "description": "Seneca data store plugin for MongoDB",
   "main": "mongo-store.js",
